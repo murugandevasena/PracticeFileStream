@@ -8,8 +8,9 @@ public class ReverseNumber {
                     int digit=number%10;
                     System.out.println(digit);
                     reversed =reversed*10+digit;
+                    System.out.println("Reversaede:"+reversed);
                     number=number/10;
                 }
-        System.out.println("Reverved number:"+reversed);
+        System.out.println("Reversed number:"+reversed);
     }
 }
