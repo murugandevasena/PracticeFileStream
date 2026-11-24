@@ -1,6 +1,10 @@
 package PraticeProblems;
 
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class FirstNonRepeatedChar {
 
@@ -18,5 +22,8 @@ public class FirstNonRepeatedChar {
         }
         System.out.println("Repeated character: "+repeated);
         System.out.println("No repeated character: "+hs1);
+
+        Map<String, Long> hmcheck = Arrays.stream(s.split(" ")).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+        System.out.println("HmCheck: "+hmcheck);
     }
 }

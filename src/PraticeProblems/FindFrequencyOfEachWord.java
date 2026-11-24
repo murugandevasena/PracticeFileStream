@@ -1,6 +1,12 @@
 package PraticeProblems;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class FindFrequencyOfEachWord {
     static void main() {
@@ -19,5 +25,9 @@ public class FindFrequencyOfEachWord {
             }
         }
         System.out.println("Repeated strings: "+lhm);
+
+        //Using stream
+        Map<String, Long> hmf = Arrays.stream(g.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(hmf.entrySet());
     }
 }
